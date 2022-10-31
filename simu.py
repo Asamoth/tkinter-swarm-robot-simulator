@@ -54,7 +54,6 @@ class Simulation:
         for i in range(self.precision_ultrason*self.N_Robots):
             angle_nom[i] = 0
 
-        #self.FPS = []
         self.seuil = math.ceil(0.8 * self.N_Robots) #seuil atteint lorsque l'entier plus grand ou égal à 80% des robots connait les coordonnées de la cible
 
         self.root = tk.Tk()
@@ -65,10 +64,7 @@ class Simulation:
         
         self.width = self.root.winfo_fpixels(str(width)+"c") #conversion de cm en pixels
         self.height = self.root.winfo_fpixels(str(height)+"c")
-        #self.perception = (self.root.winfo_fpixels(str(perception[0])+"c"), perception[1])
         self.perception = (143.90896921017404, perception[1])
-        #valeur calibrée avec pouces=34, 3440x1440
-        #self.largeur = round(self.root.winfo_fpixels(str(largeur)+"c")) #round arrondis à l'int le plus proche, int arrondis vers le bas pour un nombre positif
         self.largeur = round(32.67) #valeur obtenue par la méthode en dessus pour pouces=34, 3440x1440
         #ces grandeurs doivent être fixes pour mesurer l'impact de la taille du canvas sur l'efficacité du robot
         if self.largeur <=0 :
@@ -89,7 +85,6 @@ class Simulation:
         
         self.window = tk.Toplevel()
         self.window.title("Simulation")
-        #self.window.withdraw()
         
         self.started = False
         
@@ -117,7 +112,6 @@ class Simulation:
         self.canvas_simu.create_rectangle(0,0,5,self.height, fill="green") #côté de gauche
 
         self.create_cibles()
-        #self.canvas_simu.create_oval(1000,1000,1000,1000, fill="red")
         for iteration,robotx in enumerate(self.robots,start=1):
             robotx.largeur = self.width
             if self.comportement == "C":
@@ -273,8 +267,6 @@ class Simulation:
             self.rotation(robotx, iteration)
             self.canvas_simu.coords(self.drawing[robotx], robotx.x, robotx.y)
             self.cercle(robotx,iteration)
-            # if self.comportement == "A":
-            #     robotx.cinématique_inverse(robotx.L, dt)
             nuage_de_point = self.détection_obstacle(robotx.x, robotx.y, robotx.theta, self.drawing[robotx], iteration, robotx) 
             if robotx.cycle: #si on est en comportement militaire "C"
                 #Des disjonctions de cas en fonction des phases sont nécessaires car la fonction modifie et retourn des compteurs différents en fonction de la phase
