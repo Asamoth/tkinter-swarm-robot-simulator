@@ -42,6 +42,8 @@ Swarm robotics is intrinsically linked to the behavior of social insects, school
 
 In the context of disaster response and relief that we are interested in, the "s-bot" or "swarm-robot" concept is particularly relevant. These being self-reconfigurable modular robots will be able to interconnect each other autonomously in different configurations, notably in order to form chains of robots. They are capable of pulling loads such as incapacitated human beings. The problem arises when it comes to autonomy, an s-bot is constrained to about two hours of operation [2].
 
+![sbots](https://user-images.githubusercontent.com/117095706/199107970-c81370c4-d3f9-4c9d-aaad-ad3b8602136f.png)
+
 It is then  all  the more important to minimize the maximum time  needed to find a target in a given environment.
 
 # **Selected issues**
@@ -59,6 +61,13 @@ Building a robot simulator in a 2-dimensional environment via python. -Writing c
 -Study of the efficiency of swarming behaviors as a function of the number of robots in an arena of defined size in accordance with the experiment.
 
 -Comparison of simulation and experimental results and interpretation.
+
+# **Proof of kinematics model used in the modelisation**
+![model](https://user-images.githubusercontent.com/117095706/199108893-60822a26-c214-47eb-8b75-73409417e79e.png)
+![implementation](https://user-images.githubusercontent.com/117095706/199109061-b9b2854d-7211-449c-9cb1-1ec5288ae01f.png)
+
+By integrating the matricial system with respect to time, we get a function that will update the (x,y) position in the tkinter canvas as well as the angular position of the robot. Its parameter is a time interval named dt which will represent the time measured between two iterations of the code.
+Note that the origin of the axis in tkinter is in the top left whereas in my mathematical model, the origin is in the bottom left and the positive values of y are in opposite directions.
 
 # **Bibliographic references**
 
