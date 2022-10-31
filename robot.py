@@ -8,10 +8,8 @@ import angles
 class Robot:
     def __init__(self, position, vélocité, v_extrema, largeur, rayon_roues, perception_min, theta, comportement, DPCM, rapport, rayon_cible, N_Robots, perception, precision_ultrason):
         self.temps = []
-        #self.DPI = 109.676/2.54 #densité de pixels par pouce convertis en densité de pixels par cm
         self.DPI = DPCM
         #pixels/cm
-        #self.l = largeur*self.DPI/rapport
         self.l = 32.67 #pixels, valeur calibrée pour 34 DPI, 3440x1440
         self.r = rayon_roues*self.DPI/rapport  #rayon des roues
         #on a besoin du rapport pour faire correspondre ces distances avec celles utilisées pour Tkinter
@@ -70,19 +68,6 @@ class Robot:
             self.phase_précédente = 0
             self.robot_stop = False
             self.replacement = False
-            #self.phase[0] corresponds à une phase où les robots s'orientent vers le haut
-            #self.phase[1] corresponds à une phase où les robots se déplacent vers le haut jusqu'à être à 2R-1 pixels du bord où R est le rayon de la cible (1 pour marge) [hors cycle]
-            #self.phase[2] corresponds à une phase où les robots s'orientent vers la gauche
-            #self.phase[3] corresponds à une phase où les robots se déplacent vers la gauche jusqu'à 2R-1 pixels de l'obstacles le plus proche (robot ou bord)
-            #self.phase[4] corresponds à une phase où les robots s'orientent vers le bas 
-            #self.phase[5] corresponds à une phase où les robots se déplacent vers le bas jusqu'à 2R-1 pixels du bord
-            #self.phase[6] corresponds à une phase où les robots s'orientent vers la droite
-            #self.phase[7] corresponds à une phase où les robots se déplacent vers la droite de L + 2R -1, où L est la largeur du robot
-            #self.phase[8] corresponds à une phase où les robots se déplacent vers le haut [dans cycle]
-            
-            #l'ordres des opérations est initialement: 0, 1, 2, 3, 4, 5, 6, 7, 8 
-            #puis la boucle fait 6,7,4,5,6,7,8 etc.
-            
             self.cycle = True
         else:
             self.cycle = False
