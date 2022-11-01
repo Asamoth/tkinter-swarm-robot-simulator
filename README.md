@@ -7,6 +7,12 @@ Data (coordinates of the goal, the number of robots, the size of the arena, the 
 The ultimate goal of this project was to see which behavior was better at finding a missing person (the goal) inside a 2D arena.
 Warning though, my simulator is terribly inefficient, lags and is prone to bugs but some of its ideas might help someone.
 
+To launche the simulation, you only need: 
+1. main2.py the main in which all classes are called
+2. robot.py the robot class which contains all of the swarm behavior and the kinematics model for a differential-drive robot.
+3. simu.py the simulation class which contains all of the GUI for drawing the robots inside of a window.
+4. angle.py an angle class that I did not make, used for rotating items in the aforementioned classes.
+5. 
 
  # **Swarm robotics: efficiency of swarm behaviors applied to a concrete situation**
 
