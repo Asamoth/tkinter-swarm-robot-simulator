@@ -78,6 +78,9 @@ Building a robot simulator in a 2-dimensional environment via python. -Writing c
 By integrating the matricial system with respect to time, we get a function that will update the (x,y) position in the tkinter canvas as well as the angular position of the robot. Its parameter is a time interval named dt which will represent the time measured between two iterations of the code.
 Note that the origin of the axis in tkinter is in the top left whereas in my mathematical model, the origin is in the bottom left and the positive values of y are in opposite directions.
 
+# **Results**
+![fig1](https://user-images.githubusercontent.com/117095706/199322021-a4755a9f-ac99-4be5-a26d-47934d768a12.png)
+
 # **Bibliographic references**
 
 [1] Sangita Roy; Samir Biswas; Sheli Sinha Chaudhuri: Nature-Inspired Swarm Intelligence and Its Applications: [*For Biomimicry and Applications*](http://www.researchgate.net/publication/)
